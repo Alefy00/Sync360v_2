@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const multer = require('multer'); 
-const path = require('path');
-const fs = require('fs');
+const express = require('express');  // Importa o framework Express
+const router = express.Router(); // Cria um novo roteador do Express
+const multer = require('multer'); // Importa o middleware multer para upload de arquivos
+const path = require('path'); // Importa o módulo path para lidar com caminhos de arquivos
+const fs = require('fs'); // Importa o módulo fs para interações com o sistema de arquivos
 
 // Certifique-se de que o diretório de destino para salvar as imagens existe
 const uploadDir = path.join(__dirname, '../uploads');
@@ -114,7 +114,7 @@ router.get('/', (req, res) => {
         res.json(rows);
     });
 });
-return router;
+return router; // Retorna o roteador configurado
 }
 
 module.exports = UserRoutes;

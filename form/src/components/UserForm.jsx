@@ -1,5 +1,7 @@
 import  { useState } from 'react';
 
+// Componente funcional UserForm
+// Recebe as propriedades onSubmit, initialValues e darkMode
 // eslint-disable-next-line react/prop-types
 const UserForm = ({ onSubmit, initialValues, darkMode }) => {
   // Use useState para rastrear os valores do formulário
@@ -10,6 +12,7 @@ const UserForm = ({ onSubmit, initialValues, darkMode }) => {
     setValues(initialValues || {});
   };
 
+  // Função para lidar com a mudança nos campos de entrada do formulário
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues((prevValues) => ({
@@ -18,6 +21,7 @@ const UserForm = ({ onSubmit, initialValues, darkMode }) => {
     }));
   };
 
+  // Função para lidar com a mudança no campo de seleção de arquivo
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setValues((prevValues) => ({
@@ -26,18 +30,22 @@ const UserForm = ({ onSubmit, initialValues, darkMode }) => {
     }));
   };
 
+  // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Cria um novo objeto FormData para enviar os dados do formulário
     const formData = new FormData();
     for (const key in values) {
       formData.append(key, values[key]);
     }
+    // Chama a função onSubmit passando os dados do formulário
     onSubmit(formData);
 
     // Limpe os campos do formulário após o envio bem-sucedido
     clearForm();
   };
 
+  // Retorna a interface do usuário
   return (
     <form onSubmit={handleSubmit} className={`p-10 mt-20 mx-auto w-full md:w-2/3 lg:w-1/2 rounded-lg   ${darkMode ? 'bg-zinc-800 ring-slate-900/5 shadow-xl text-white' : 'bg-white text-gray-900'} shadow-lg`}>
       <div className="mb-4">

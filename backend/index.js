@@ -1,11 +1,11 @@
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-const UserRoutes = require('./routes/userRoutes'); // Importe o construtor do roteador
-const cors = require('cors');
+const express = require('express'); // Importa o framework Express
+const sqlite3 = require('sqlite3').verbose(); // Importa o SQLite3
+const UserRoutes = require('./routes/userRoutes'); // Importa o construtor do roteador UserRoutes
+const cors = require('cors'); // Importa o módulo CORS para lidar com solicitações de diferentes origens
 
-const app = express();
+const app = express();  // Cria uma instância do aplicativo Express
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; // Define a porta do servidor
 
 // Permitir solicitações CORS de qualquer origem
 app.use(cors());
