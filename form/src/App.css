@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* Cores para o modo claro */
+:root {
+  --background-light: #e2e8f0; /* Cor de fundo para o modo claro */
+  --text-light: #333333; /* Cor do texto para o modo claro */
+  /* Adicione outras variáveis de cores para o modo claro conforme necessário */
+}
+
+/* Cores para o modo escuro */
+.dark {
+  --background-dark:  #18181b; /* Cor de fundo para o modo escuro */
+  --text-dark: #ffffff; /* Cor do texto para o modo escuro */
+  /* Adicione outras variáveis de cores para o modo escuro conforme necessário */
+}
+
+/* App.css */
+
+/* Estilos condicionais com base no modo escuro/claro */
+body {
+  background-color: var(--background-light); /* Cor de fundo condicional */
+  color: var(--text-light); /* Cor do texto condicional */
+}
+
+.dark {
+  background-color: var(--background-dark); /* Cor de fundo condicional para modo escuro */
+  color: var(--text-dark); /* Cor do texto condicional para modo escuro */
+}
