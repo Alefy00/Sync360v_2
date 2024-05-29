@@ -63,7 +63,7 @@ O Sync360v_2 é uma aplicação web desenvolvida para gerenciar informações de
 ### Execução
 1. Inicie o backend: `cd backend && node index.js`
 2. Inicie o frontend: `cd form && npm run dev`
-3. Acesse a aplicação em um navegador: (http://localhost:5173/)
+3. Acesse a aplicação em um navegador: http://localhost:5173/
 
 ## Contribuição
 
