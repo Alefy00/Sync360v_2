@@ -49,10 +49,13 @@ function App() {
   return (
     <div className={`App ${darkMode ? 'dark' : ''}`}> {/* Define a classe App com base no modo escuro */}
       <div className="container mx-auto p-4">
+
         {/* Componente ThemeToggle para alternar entre os modos de tema */}
         <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode}/>
+
         {/* Componente UserCard para exibir os detalhes do usuário */}
         <UserCard darkMode={darkMode} />
+        
         {/* Componente UserForm para adicionar ou editar os detalhes do usuário */}
         <UserForm onSubmit={handleSubmit} initialValues={formValues} darkMode={darkMode} />
       </div>

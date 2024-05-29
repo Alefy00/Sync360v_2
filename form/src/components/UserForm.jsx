@@ -2,9 +2,11 @@ import  { useState } from 'react';
 
 // Componente funcional UserForm
 // Recebe as propriedades onSubmit, initialValues e darkMode
+
 // eslint-disable-next-line react/prop-types
 const UserForm = ({ onSubmit, initialValues, darkMode }) => {
   // Use useState para rastrear os valores do formulário
+
   const [values, setValues] = useState(initialValues || {});
 
   // Defina a função para limpar os campos do formulário
@@ -33,11 +35,13 @@ const UserForm = ({ onSubmit, initialValues, darkMode }) => {
   // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // Cria um novo objeto FormData para enviar os dados do formulário
     const formData = new FormData();
     for (const key in values) {
       formData.append(key, values[key]);
     }
+    
     // Chama a função onSubmit passando os dados do formulário
     onSubmit(formData);
 
